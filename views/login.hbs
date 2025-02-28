@@ -1,0 +1,159 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Add Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJ6H2DQK6K3kL53DpzAcoihZj2+5q2h9JZT+pe1Dde+fZr6zXgmdvDg9JtXq" crossorigin="anonymous">
+    <style>
+        /* Custom styling */
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            background-color: orange;
+            color: #fff;
+            padding: 30px 60px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav li {
+            list-style: none;
+        }
+
+        nav li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 8px;
+        }
+
+        nav li a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* Login Form Container */
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header for the login form */
+        .login-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* Adding spacing between form fields */
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .btn-primary {
+            width: 70%;
+            height: 50px; 
+            background-color: orange;
+            border: none;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 25px; /* Rounded corners */
+        }
+
+        .btn-primary:hover {
+            background-color: #ff9f00;
+        }
+
+        .alert-danger {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Link to Register page style */
+        .register-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .register-link a {
+            color: orange;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar (removed login button here) -->
+    <nav>
+        <div class="logo">
+            <h1>My Website</h1>
+        </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/register">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Login Container -->
+    <div class="login-container">
+        <h2>Login</h2>
+        
+        <!-- Login Form -->
+        <form action="/auth/login" method="POST">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        <!-- Error Message Display (if any) -->
+        {{#if message}}
+            <div class="alert alert-danger mt-3">{{message}}</div>
+        {{/if}}
+
+        <!-- Link to Register Page -->
+        <p class="register-link">Don't have an account? <a href="/register">Register here</a></p>
+    </div>
+
+    <!-- Bootstrap JS (optional for Bootstrap components like modals, tooltips) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6GqLMhP2vo0vF+gGqtXld16a3Q6gsBVsV8uDh1X3WlP1Vx5" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0Wv8Fq8QXyowj6X6iA8BXS1qjj5Dq4hS5nftlHkDdO4+fsd" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
